@@ -10,7 +10,6 @@ import shoppingContext, {
   ShoppingContextType,
 } from "../../../context/ShoppingContext";
 import CloseIcon from "@mui/icons-material/Close";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Paper from "@mui/material/Paper";
 import Image from "next/image";
 
@@ -74,6 +73,8 @@ const Cart = () => {
                 </section>
 
                 <OrderInfo
+                  clearCart={clearCart}
+                  closeCart={closeCart}
                   totalProducts={totalProducts}
                   totalAmount={totalAmount}
                 />

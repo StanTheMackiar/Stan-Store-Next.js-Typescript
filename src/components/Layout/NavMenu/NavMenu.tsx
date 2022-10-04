@@ -36,11 +36,7 @@ const NavMenu = () => {
           className={styles.menuItem}
           onMouseOver={() => setIsOpen(true)}
           onMouseOut={() => setIsOpen(false)}>
-          <Link href="/store">
-            <a>
-              <span>Categories</span>
-            </a>
-          </Link>
+          <span>Categories</span>
           {categories.length > 0 && (
             <Fade
               in={isOpen}

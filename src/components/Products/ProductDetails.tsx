@@ -8,7 +8,7 @@ import  shoppingContext, { ShoppingContextType } from "../../context/ShoppingCon
 import { Box } from "@mui/system";
 
 const ProductDetails = ({ product }: ProductType) => {
-  // const [open, setOpen] = useState(false);
+  
   const {addToCart, openCart} = useContext(shoppingContext) as ShoppingContextType
   const [openAlert, setOpenAlert] = useState(false);
   

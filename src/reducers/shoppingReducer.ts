@@ -91,7 +91,10 @@ export function shoppingReducer(state: CartState, action: ActionType) {
       };
     }
     case "clear_cart":
-      return shoppingInitialState;
+      return {
+        ...state,
+        cart: [],
+      }
 
     case "total_amount": {
       return {

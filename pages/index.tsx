@@ -1,7 +1,7 @@
 import { getProducts } from '../services/getProducts'
 import Layout from '../src/components/Layout/Layout'
 import Home from '../src/components/Pages/Home/Home'
-import { Products, ProductsType } from '../src/interfaces/products';
+import { ProductsType } from '../src/interfaces/products';
 
 
 const HomeRoute = ({products}: ProductsType) => {

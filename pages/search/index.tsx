@@ -2,11 +2,11 @@ import React from "react";
 import { search } from "../../services/search";
 import Layout from "../../src/components/Layout/Layout";
 import SearchResults from "../../src/components/Pages/Search/SearchResults";
-import { SearchProps, SearchPropsResults } from "../../src/interfaces/search";
+import { SearchPropsResults } from "../../src/interfaces/search";
 
 
 
-const Search = ({ query, results }: SearchPropsResults) => {
+const SearchRoute = ({ query, results }: SearchPropsResults) => {
     
   return (
     <Layout title={`Results for ${query}`}>
@@ -15,7 +15,7 @@ const Search = ({ query, results }: SearchPropsResults) => {
   );
 };
 
-export default Search;
+export default SearchRoute;
 
 export async function getServerSideProps(context:any) {
   

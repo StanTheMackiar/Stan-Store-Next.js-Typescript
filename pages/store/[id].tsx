@@ -9,7 +9,7 @@ interface StaticProps {
   params: { id: string };
 }
 
-const ProductsDetail = ({ product }: ProductType) => {
+const ProductsDetailRoute = ({ product }: ProductType) => {
   return (
     <Layout title="Product">
       <ProductDetails product={product} />
@@ -17,7 +17,7 @@ const ProductsDetail = ({ product }: ProductType) => {
   );
 };
 
-export default ProductsDetail;
+export default ProductsDetailRoute;
 
 
 export async function getStaticPaths() {

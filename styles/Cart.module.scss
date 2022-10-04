@@ -3,6 +3,7 @@
 
 .container {
   position: absolute;
+  overflow: auto;
   right: 0;
   top: 0;
   display: flex;
@@ -29,16 +30,14 @@
 
 .cartItemContainer {
   display: flex;
-  overflow: auto;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   border-bottom: thin solid rgba(32, 178, 171, 0.224);
   @media (max-width: 800px) {
     justify-content: space-evenly;
     flex-direction: column;
-    margin: 0;
   }
 }
 .image {

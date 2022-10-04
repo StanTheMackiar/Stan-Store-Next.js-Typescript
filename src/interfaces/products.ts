@@ -26,3 +26,8 @@ export type ProductType = {
 export type ProductsType = {
     products: Products[],
   }
+
+  export type CategoryPropsType = {
+    products: Products[],
+    category: string,
+  }
