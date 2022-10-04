@@ -1,0 +1,36 @@
+@import "./modules/color";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.firstRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.secondRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+.thirdRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  color: white;
+  padding: 0.8rem;
+}
+.contactElements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

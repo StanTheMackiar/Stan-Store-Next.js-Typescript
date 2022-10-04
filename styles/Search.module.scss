@@ -1,0 +1,54 @@
+@import "./modules/color";
+@import "./modules/font";
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+  gap: 2rem;
+  width: 80%;
+  margin: 3rem auto;
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    margin: 0.5rem;
+    gap: 1rem;
+    width: auto;
+  }
+}
+.span {
+  color: $primary-color;
+  font-style: italic;
+}
+
+.searchList {
+  position: fixed;
+  z-index: 999;
+  max-height: 25rem;
+  width: 18.5rem;
+  overflow: auto;
+  top: 3.9rem;
+  border-radius: 0.3rem;
+  ul {
+    padding: 0;
+  }
+  @media (max-width: 850px) {
+    width: 18rem;
+    top: 4.5rem;
+  }
+}
+.listContainer {
+  box-shadow: 0 0 3px rgba(32, 178, 171, 0.405);
+  list-style: none;
+  a {
+    display: inline-block;
+    font-size: $font-small;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    @media (max-width: 800px) {
+      color: $primary-color;
+    }
+    &:hover {
+      background-color: $primary-color-hover;
+      color: white
+    }
+  }
+
+}

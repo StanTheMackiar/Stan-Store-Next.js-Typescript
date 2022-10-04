@@ -1,0 +1,56 @@
+@import "./modules/color";
+@import "./modules/font";
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    width: auto;
+  }
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 5;
+  @media (max-width: 800px) {
+    padding: 1rem;
+    width: auto;
+  }
+}
+.infoContainer {
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+  @media (max-width: 800px) {
+    margin: 1.5rem;
+  }
+}
+.title {
+  margin: 0.5rem;
+  color: $secondary-color-hover;
+}
+.price {
+  color: rgb(147, 155, 168);
+  font-size: 25px;
+  margin: 0.5rem;
+}
+.description {
+  text-align: justify;
+}
+.subtitle {
+  margin: 0;
+  text-transform: capitalize;
+}
+.ratingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ratingInfo {
+    font-size: $font-small;
+}

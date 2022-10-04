@@ -1,0 +1,53 @@
+@import "../styles/modules/color";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: thin solid rgba(187, 145, 8, 0.356);
+  margin-bottom: 1rem;
+  @media (max-width: 800px) {
+    border-bottom: none;
+  }
+}
+.navMenu {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 1rem;
+  .menuItem {
+    padding: 1rem;
+    width: 8rem;
+    text-align: center;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+    color: $primary-color;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.2s ease;
+      color: $secondary-color;
+      border-bottom: 4px solid $secondary-color;
+    }
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+.list {
+  position: absolute;
+  margin-right: 10rem;
+  z-index: 999;
+  border: none;
+  top: 9.1rem;
+  
+
+  span {
+    text-transform: capitalize;
+    display: block;
+    width: 100%;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

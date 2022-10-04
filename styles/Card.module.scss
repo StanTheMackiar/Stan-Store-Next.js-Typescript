@@ -1,0 +1,39 @@
+@import './modules/color';
+@import './modules/font';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.108);
+    box-shadow: 0 0 10px rgba(49, 49, 49, 0.24);
+    &:hover {
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(32, 178, 171, 0.719);
+    }
+}
+.name {
+    color: $primary-color;
+    font-size: $font-small;
+    margin: 0.5rem 1rem;
+}
+.price {
+    margin: 0.5rem;
+    color: $primary-color-hover;
+    font-weight: bold;
+}
+.tag {
+    position: absolute;
+    z-index: 50;
+}
+.image {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.2rem;
+    border: thin solid rgba(32, 178, 171, 0.171);
+}
+@media (max-width: 800px) {
+}

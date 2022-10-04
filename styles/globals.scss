@@ -1,0 +1,57 @@
+@import './modules/color';
+@import './modules/font';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+main {
+  padding-top: 2rem;
+  padding-bottom: 14rem;
+  margin: 1rem ;
+  place-content: center;
+  text-align: center;
+  @media (max-width: 800px) {
+    margin: 0;
+    padding-bottom: 22rem;
+  }
+}
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:link, &:visited, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+h1 {
+  color: $secondary-color;
+  font-size: $font-large;
+  font-weight: 400;
+  font-style: italic;
+}
+h2 {
+  color: $primary-color-hover;
+  font-size: $font-medium;
+  font-family: 400;
+}
+h3 {
+  color: $primary-color-hover;
+  font-weight: 400;
+}
+p {
+  margin: 0.5rem 0;
+  line-height: 2rem;
+}
+
+
