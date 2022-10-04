@@ -43,15 +43,15 @@ export function shoppingReducer(state: CartState, action: ActionType) {
       };
     }
     case "add_to_cart": {
-      let newItem: Products = state.products.find((product) => product.id === action.payload);
+      let newItem = state.products.find((product) => product.id === action.payload) as Products;
 
-      let itemInCart = state.cart.find((item) => item.id === newItem.id);
+      let itemInCart = state.cart.find((item) => item.id === newItem.id)
 
       return itemInCart
         ? {
             ...state,
             cart: state.cart.map((item) =>
-              item.id === newItem?.id
+              item.id === newItem.id
                 ? { ...item, amount: item.amount + 1 }
                 : item
             ),
@@ -62,7 +62,7 @@ export function shoppingReducer(state: CartState, action: ActionType) {
           };
     }
     case "remove_one_from_cart": {
-      let itemToDelete = state.cart.find((item) => item.id === action.payload);
+      let itemToDelete = state.cart.find((item) => item.id === action.payload) as Cart;
 
       return itemToDelete.amount > 1
         ? {
