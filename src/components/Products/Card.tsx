@@ -17,7 +17,7 @@ const Card = ({ product, tag = false }: CardType) => {
       <div
         key={product.id}
         className={styles.container}>
-        <Link href={`/store/${convertToPath(product.title)}`}>
+        <Link href={`/store/${convertToPath((product.title).trim())}`}>
           <a>
             {tag && (
               <div className={styles.tag}>

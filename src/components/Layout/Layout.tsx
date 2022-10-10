@@ -6,7 +6,7 @@ import Main from "./Main/Main";
 import NavMenu from "./NavMenu/NavMenu";
 
 interface Props {
-    children: JSX.Element
+    children: JSX.Element,
     title: string,
     description?: string,
 }

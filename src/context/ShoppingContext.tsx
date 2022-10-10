@@ -8,7 +8,7 @@ import {
 } from "../reducers/shoppingReducer";
 
 interface ProviderProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[]
 }
 
 export type ShoppingContextType = {
@@ -30,7 +30,6 @@ const shoppingContext = createContext<ShoppingContextType>(
 
 
 const ShoppingProvider = ({ children }: ProviderProps) => {
-
   const [cartState, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
   useEffect(() => {

@@ -1,0 +1,14 @@
+.productsGrid {
+    display: grid;
+    margin: 2rem auto;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    gap: 2rem;
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        gap: 1rem;
+        width: auto;
+        margin: 2rem 0.5rem;
+    }
+  }
+  
