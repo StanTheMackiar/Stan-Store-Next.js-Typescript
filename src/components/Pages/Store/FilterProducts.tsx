@@ -11,7 +11,7 @@ import FiltersContext, {
 } from "../../../context/FiltersContext";
 
 const FilterProducts = () => {
-  const { price, onPriceChange } = useContext(FiltersContext) as FiltersContextType;
+  const { price, onPriceChange } = useContext(FiltersContext);
 
   return (
     <div className={styles.filterProducts}>

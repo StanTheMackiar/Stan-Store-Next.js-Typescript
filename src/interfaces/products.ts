@@ -15,7 +15,7 @@ export interface Cart extends Products {
     amount: number
 }
 
-export type CartType = {
+export interface CartType {
     product: Cart
 }
 

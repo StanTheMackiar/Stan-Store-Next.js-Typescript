@@ -12,17 +12,21 @@ export type FiltersContextType = {
   handleListClick: () => void,
 }
 
-const FiltersContext = createContext<FiltersContextType | null>(null);
+const FiltersContext = createContext<FiltersContextType>({} as FiltersContextType);
 
 
 interface ProviderProps {
   children: JSX.Element
 }
+interface PriceFilter {
+  from: string,
+  to: string,
+}
 
 const FiltersProvider = ({ children }: ProviderProps) => {
   const router = useRouter();
-  const [price, setPrice] = useState({ from: "", to: "" });
-  const [results, setResults] = useState([] as SearchResults[] | []);
+  const [price, setPrice] = useState<PriceFilter>({ from: "", to: "" });
+  const [results, setResults] = useState<SearchResults[]>([]);
 
 
   const onPriceChange = (name:string, value:string) => {

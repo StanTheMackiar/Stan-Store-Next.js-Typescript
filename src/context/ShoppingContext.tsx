@@ -1,42 +1,62 @@
 import React, { createContext, useEffect, useReducer } from "react";
+import { getProducts } from "../../services/getProducts";
 import { Products } from "../interfaces/products";
-import { CartState, shoppingInitialState, shoppingReducer } from "../reducers/shoppingReducer";
+import {
+  CartState,
+  shoppingInitialState,
+  shoppingReducer,
+} from "../reducers/shoppingReducer";
 
 interface ProviderProps {
-  children: JSX.Element
+  children: JSX.Element;
 }
 
 export type ShoppingContextType = {
-  putProductsToCart: (a: Products [] | []) => void,
-  openCart: () => void,
-  closeCart: () => void,
-  addToCart: (id: number) => void,
-  addFromCart: (id:number) => void,
-  delFromCart: (id: number) => void,
-  delAllFromCart: (id: number) => void,
-  clearCart: () => void,
-  cartState: CartState,
-}
+  putProductsToCart: (a: Products[] | []) => void;
+  openCart: () => void;
+  closeCart: () => void;
+  addToCart: (id: number) => void;
+  addFromCart: (id: number) => void;
+  delFromCart: (id: number) => void;
+  delAllFromCart: (id: number) => void;
+  clearCart: () => void;
+  cartState: CartState;
+};
 
-const shoppingContext = createContext<ShoppingContextType | null>(null);
+const shoppingContext = createContext<ShoppingContextType>(
+  {} as ShoppingContextType
+);
+
 
 
 const ShoppingProvider = ({ children }: ProviderProps) => {
 
-   const [cartState, dispatch] = useReducer(shoppingReducer, shoppingInitialState)
-  
+  const [cartState, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-  const putProductsToCart = (products: Products[] | []) => {
-    dispatch({ type: "put_products_to_cart", payload: products})
-  }
+  useEffect(() => {
+    const addProducts = async () => {
+      putProductsToCart(await getProducts())
+    }
+    addProducts();
+  }, []);
+
+  useEffect(() => {
+    getTotalAmount();
+    getTotalProducts();
+  }, [cartState.cart]);
+
+
+  const putProductsToCart = (products: Products[]) => {
+    dispatch({ type: "put_products_to_cart", payload: products });
+  };
 
   const openCart = () => {
-    dispatch({ type: "open_cart" })
-  }
+    dispatch({ type: "open_cart" });
+  };
 
   const closeCart = () => {
-    dispatch({ type: "close_cart" })
-  }
+    dispatch({ type: "close_cart" });
+  };
 
   const addToCart = (id: number) => {
     dispatch({ type: "add_to_cart", payload: id });
@@ -63,28 +83,25 @@ const ShoppingProvider = ({ children }: ProviderProps) => {
   };
 
   const getTotalProducts = () => {
-    dispatch({ type: "total_products" })
-  }
-
-  useEffect(() => {
-    getTotalAmount();
-    getTotalProducts();
-  }, [cartState.cart]);
-
+    dispatch({ type: "total_products" });
+  };
 
 
   return (
-    <shoppingContext.Provider 
-    value={   
-     { putProductsToCart,
-      addFromCart,
-      addToCart,
-      delFromCart,
-      delAllFromCart,
-      clearCart,
-      openCart,
-      closeCart,
-      cartState,}}>{children}</shoppingContext.Provider>
+    <shoppingContext.Provider
+      value={{
+        putProductsToCart,
+        addFromCart,
+        addToCart,
+        delFromCart,
+        delAllFromCart,
+        clearCart,
+        openCart,
+        closeCart,
+        cartState,
+      }}>
+      {children}
+    </shoppingContext.Provider>
   );
 };
 

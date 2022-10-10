@@ -10,16 +10,13 @@ export interface CartState {
   totalProducts: number;
 }
 
-
-export const shoppingInitialState = {
-    products: await getProducts(),
-    cart: [],
-    isOpen: false,
-    totalAmount: 0,
-    totalProducts: 0,
+export const shoppingInitialState: CartState = {
+  products: [],
+  cart: [],
+  isOpen: false,
+  totalAmount: 0,
+  totalProducts: 0,
 };
-
-
 
 export function shoppingReducer(state: CartState, action: ActionType) {
 

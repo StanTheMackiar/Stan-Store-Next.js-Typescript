@@ -2,8 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Layout from "../src/components/Layout/Layout";
 
-const Error404 = () => {
-  return (
+const Error404 = () => (
     <Layout title="Error 404">
       <>
         <Image
@@ -16,7 +15,6 @@ const Error404 = () => {
         />
       </>
     </Layout>
-  );
-};
+  )
 
 export default Error404;

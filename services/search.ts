@@ -6,7 +6,7 @@ const index = client.initIndex("Products");
 
 
   export const search = async ({query}: SearchProps) => {
-    const { hits } = await index.search(query as any, {
+    const { hits } = await index.search(query as string, {
       attributesToRetrieve: ["id", "title", "image","category", "price"],
         hitsPerPage: 20,
       });

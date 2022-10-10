@@ -8,7 +8,12 @@ export interface SearchResults {
 }
 
 export interface SearchProps {
-  query: string | string[] | undefined
+  query: string | string[]
+}
+export interface Results {
+  results: {
+    
+  }
 }
 
 export type SearchPropsResults = {

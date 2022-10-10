@@ -10,6 +10,7 @@ interface StaticProps {
 }
 
 const ProductsDetailRoute = ({ product }: ProductType) => {
+
   return (
     <Layout title="Product">
       <ProductDetails product={product} />

@@ -1,7 +1,7 @@
 import { Products } from "../interfaces/products";
 
 export type ActionType =
-  | { type: "put_products_to_cart", payload: Products[] | [] }
+  | { type: "put_products_to_cart", payload: Products[]}
   | { type: "open_cart" }
   | { type: "close_cart" }
   | { type: "add_to_cart", payload: number }
