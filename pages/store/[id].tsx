@@ -2,7 +2,7 @@ import React from "react";
 import { getProducts } from "../../services/getProducts";
 import Layout from "../../src/components/Layout/Layout";
 import ProductDetails from "../../src/components/Products/ProductDetails";
-import RecommendedProducts from "../../src/components/Products/RecommendedProducts";
+import RelatedProducts from "../../src/components/Products/RelatedProducts";
 import { ProductDetailRouteProps } from "../../src/interfaces/products";
 import { convertToPath } from "../../src/utility/utils";
 
@@ -18,7 +18,7 @@ const ProductsDetailRoute = ({
     <Layout title="Product">
       <>
         <ProductDetails product={product} />
-        <RecommendedProducts
+        <RelatedProducts
           products={products}
           product={product}
         />

@@ -5,7 +5,10 @@ import { ProductsType } from "../../src/interfaces/products";
 
 const StoreRoute = ({ products }: ProductsType) => (
   <Layout title="Store">
-    <Store products={products} />
+    <>
+      <h1>All products</h1>
+      <Store products={products} />
+    </>
   </Layout>
 );
 

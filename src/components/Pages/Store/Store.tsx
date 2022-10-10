@@ -15,7 +15,6 @@ const Store = ({ products }: ProductsType) => {
 
   return (
     <>
-      <h1>List of Products</h1>
       <section className={styles.ListProductsContainer}>
         <FilterProducts />
         <h3>Showing {displayedProducts.length} products</h3>
