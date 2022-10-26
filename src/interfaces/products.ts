@@ -19,15 +19,15 @@ export interface CartType {
   product: Cart;
 }
 
-export type ProductType = {
+export interface ProductType {
   product: Products;
 };
 
-export type ProductsType = {
+export interface ProductsType {
   products: Products[];
 };
 
-export type CategoryPropsType = {
+export interface CategoryPropsType {
   products: Products[];
   category: string;
 };

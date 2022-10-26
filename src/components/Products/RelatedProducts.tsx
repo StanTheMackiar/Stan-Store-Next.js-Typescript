@@ -1,9 +1,12 @@
-import { ProductDetailRouteProps, Products } from "../../interfaces/products";
-import Card from "./Card";
-import styles from "../../../styles/RecommendedProducts.module.scss";
-import { useEffect, useState } from "react";
-import { Button } from "@mui/material";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+import { ProductDetailRouteProps, Products } from "../../interfaces/products";
+
+import styles from "../../../styles/RecommendedProducts.module.scss";
+import { Button } from "@mui/material";
+
+import { Card, ImageCard, PriceCard, TitleCard } from "./Card";
 
 const RelatedProducts = ({ products, product }: ProductDetailRouteProps) => {
 
@@ -34,8 +37,11 @@ const RelatedProducts = ({ products, product }: ProductDetailRouteProps) => {
         {relatedProducts.map((product) => (
           <Card
             product={product}
-            key={product.id}
-          />
+            key={product.id}>
+              <ImageCard newTag/>
+              <TitleCard />
+              <PriceCard />
+            </Card>
         ))}
       </div>
       <Link href={`/categories/${product.category}`}>

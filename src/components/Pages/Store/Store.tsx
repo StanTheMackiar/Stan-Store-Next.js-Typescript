@@ -4,12 +4,11 @@ import filtersContext, {
   FiltersContextType,
 } from "../../../context/FiltersContext";
 import { ProductsType } from "../../../interfaces/products";
-import Card from "../../Products/Card";
+import { Card, ImageCard, PriceCard, TitleCard } from "../../Products/Card";
 import FilterProducts from "./FilterProducts";
 
 const Store = ({ products }: ProductsType) => {
   const { filterProducts } = useContext(filtersContext) as FiltersContextType;
-  
 
   const displayedProducts = filterProducts(products);
 
@@ -19,11 +18,14 @@ const Store = ({ products }: ProductsType) => {
         <FilterProducts />
         <h3>Showing {displayedProducts.length} products</h3>
         <div className={styles.productsGrid}>
-          {displayedProducts.map((el) => (
+          {displayedProducts.map((product) => (
             <Card
-              key={el.id + "search"}
-              product={el}
-            />
+              key={product.id + "store"}
+              product={product}>
+              <ImageCard />
+              <TitleCard />
+              <PriceCard />
+            </Card>
           ))}
         </div>
       </section>

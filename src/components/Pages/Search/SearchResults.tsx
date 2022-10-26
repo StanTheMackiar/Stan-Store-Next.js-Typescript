@@ -1,7 +1,7 @@
 import React from "react";
 import { SearchPropsResults } from "../../../interfaces/search";
 import styles from "../../../../styles/Search.module.scss";
-import Card from "../../Products/Card";
+import { Card, ImageCard, PriceCard, TitleCard } from "../../Products/Card";
 
 const SearchResults = ({ query, results }: SearchPropsResults) => {
   return (
@@ -22,8 +22,11 @@ const SearchResults = ({ query, results }: SearchPropsResults) => {
         {results.map((product) => (
           <Card
             product={product}
-            key={product.id}
-          />
+            key={product.id}>
+            <ImageCard />
+            <TitleCard />
+            <PriceCard />
+          </Card>
         ))}
       </div>
     </>

@@ -1,5 +1,5 @@
 
-export function convertToPath(name: string) {
+export const convertToPath = (name: string) => {
     return name.toLowerCase().replace(/\s/g, "-")
 }
 

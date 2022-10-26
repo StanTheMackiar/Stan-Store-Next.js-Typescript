@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { Products, ProductsType } from "../../../interfaces/products";
-import Card from "../../Products/Card";
 import Link from "next/link";
 import styles from "../../../../styles/Home.module.scss";
+import { Card, ImageCard, PriceCard, TitleCard } from "../../Products/Card";
 
 const NewProducts = ({ products }: ProductsType) => (
   <div className={styles.newProductsSection}>
@@ -12,9 +12,11 @@ const NewProducts = ({ products }: ProductsType) => (
         products.map((product: Products) => (
           <Card
             product={product}
-            key={product.id}
-            tag={true}
-          />
+            key={product.id}>
+            <ImageCard newTag />
+            <TitleCard />
+            <PriceCard />
+          </Card>
         ))}
     </div>
     <Link href="/store">

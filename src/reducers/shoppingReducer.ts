@@ -1,4 +1,4 @@
-import { getProducts } from "../../services/getProducts";
+
 import { ActionType } from "../actions/shoppingActions";
 import { Cart, Products } from "../interfaces/products";
 

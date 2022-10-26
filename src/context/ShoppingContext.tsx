@@ -11,7 +11,7 @@ interface ProviderProps {
   children: JSX.Element | JSX.Element[]
 }
 
-export type ShoppingContextType = {
+export interface ShoppingContextType {
   putProductsToCart: (a: Products[] | []) => void;
   openCart: () => void;
   closeCart: () => void;
@@ -23,10 +23,9 @@ export type ShoppingContextType = {
   cartState: CartState;
 };
 
-const shoppingContext = createContext<ShoppingContextType>(
+const shoppingContext = createContext(
   {} as ShoppingContextType
 );
-
 
 
 const ShoppingProvider = ({ children }: ProviderProps) => {
