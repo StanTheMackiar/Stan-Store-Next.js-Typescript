@@ -1,6 +1,6 @@
 
 
-const themeOptions = (mode: any ): any => ({
+const themeOptions = (mode: "light" | "dark" = "light" ) => ({
   palette: {
     mode,
           primary: {

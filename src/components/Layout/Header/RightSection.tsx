@@ -7,11 +7,11 @@ import shoppingContext, {
 } from "../../../context/ShoppingContext";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@emotion/react";
-import { Box } from "@mui/system";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { ColorModeContext } from "../../../../pages/_app";
+
 import { Badge } from "@mui/material";
+import { ColorModeContext } from "../../../context/ColorModeContext";
 
 const RightSection = () => {
   const { cartState, openCart } = useContext(
@@ -20,7 +20,7 @@ const RightSection = () => {
 
   const theme: any = useTheme();
 
-  const colorMode = useContext(ColorModeContext);
+  const { toggleColorMode } = useContext(ColorModeContext);
 
   return (
     <section className={styles.containerRight}>
@@ -30,7 +30,7 @@ const RightSection = () => {
         </Link>
       </nav>
 
-      <IconButton onClick={colorMode.toggleColorMode}>
+      <IconButton onClick={toggleColorMode}>
         {theme.palette.mode === "dark" ? (
           <Brightness7Icon />
         ) : (
