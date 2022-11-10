@@ -27,7 +27,7 @@ const RelatedProducts = ({ products, product }: ProductDetailRouteProps) => {
           
       setRelatedProducts([productsWithoutActualProduct[aleatoryNumber1], productsWithoutActualProduct[aleatoryNumber2]])
 
-    }, [product.category, product.id, products]);
+    }, []);
     
 
   return (
@@ -38,7 +38,7 @@ const RelatedProducts = ({ products, product }: ProductDetailRouteProps) => {
           <Card
             product={product}
             key={product.id}>
-              <ImageCard newTag/>
+              <ImageCard />
               <TitleCard />
               <PriceCard />
             </Card>
@@ -47,7 +47,6 @@ const RelatedProducts = ({ products, product }: ProductDetailRouteProps) => {
       <Link href={`/categories/${product.category}`}>
         <a><Button disableElevation variant="contained" color="secondary" sx={{marginBottom: "2rem"}}>More products</Button></a>
       </Link>
-
     </section>
   );
 };

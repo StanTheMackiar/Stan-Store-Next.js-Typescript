@@ -1,12 +1,10 @@
-import React from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { getCategories, getProductsForCategories } from '../../services/getCategories';
+
 import Layout from '../../src/components/Layout/Layout';
 import CategoryProducts from '../../src/components/Pages/Categories/CategoryProducts';
-import { CategoryPropsType, ProductsType } from '../../src/interfaces/products';
+import { CategoryPropsType } from '../../src/interfaces/products';
 
-interface StaticProps {
-    params: { category: string };
-  }
   
 
 
@@ -20,7 +18,7 @@ const Categories = ( { products, category }: CategoryPropsType) => {
 
 export default Categories
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
     const categories = await getCategories();
     const paths = categories.map((category) => {
       return {
@@ -36,8 +34,8 @@ export async function getStaticPaths() {
     };
   }
   
-  export async function getStaticProps({ params }: StaticProps) {
-    const { category } = params;
+  export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const { category } = params as {category: string};
     const products = await getProductsForCategories(category);
   
     return {

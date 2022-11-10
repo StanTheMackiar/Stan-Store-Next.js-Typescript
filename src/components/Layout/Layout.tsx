@@ -7,8 +7,8 @@ import NavMenu from "./NavMenu/NavMenu";
 
 interface Props {
     children: JSX.Element,
-    title: string,
     description?: string,
+    title: string,
 }
 
 export default function Layout({ children, title = "Home", description }: Props) {

@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { getProducts } from "../../services/getProducts";
 import Layout from "../../src/components/Layout/Layout";
@@ -6,9 +7,7 @@ import RelatedProducts from "../../src/components/Products/RelatedProducts";
 import { ProductDetailRouteProps } from "../../src/interfaces/products";
 import { convertToPath } from "../../src/utility/utils";
 
-interface StaticProps {
-  params: { id: string };
-}
+
 
 const ProductsDetailRoute = ({
   product,
@@ -29,7 +28,7 @@ const ProductsDetailRoute = ({
 
 export default ProductsDetailRoute;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const products = await getProducts();
   const paths = products.map((product) => {
     return {
@@ -45,8 +44,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: StaticProps) {
-  const { id } = params;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { id } = params as { id: string };
   const products = await getProducts();
   const product = products.find(
     (product) => convertToPath((product.title).trim()) === id

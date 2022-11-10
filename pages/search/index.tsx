@@ -21,7 +21,6 @@ export async function getServerSideProps(context:any) {
   
   const { query } = context;
   const { q = "" } = query;
-  console.log(q);
 
   const { results } = await search({ query: q });
 
